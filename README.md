@@ -1,6 +1,7 @@
 # numba scaling tests
 
-You need to pip install the module before using it.
+You need to pip install the module before using it. You will also need a working
+installation of `mpi4py`.
 
 # example analysis
 
