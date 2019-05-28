@@ -12,7 +12,7 @@ rank = comm.Get_rank()
 n_ranks = comm.Get_size()
 
 n_times = int(sys.argv[1])
-n_dims = 1000
+n_dims = 10
 shape = (n_dims, n_dims)
 
 t0 = time.time()
