@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+import sys
+import time
+
+import numpy as np
+
+from numba_scaling_test.numba_module import add_a_lot, mult_a_lot
+
+from mpi4py import MPI
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+n_ranks = comm.Get_size()
+
+n_times = int(sys.argv[1])
+n_dims = 1000
+shape = (n_dims, n_dims)
+
+t0 = time.time()
+rng = np.random.RandomState(seed=rank)
+tot = np.zeros(shape, dtype=np.float64)
+
+for _ in range(n_times):
+    a = rng.normal(size=shape)
+    b = rng.normal(size=shape)
+    c = rng.normal(size=shape)
+    d = rng.normal(size=shape)
+    e = rng.normal(size=shape)
+    f = rng.normal(size=shape)
+    g = rng.normal(size=shape)
+
+    tot = add_a_lot(tot, a, b, c, d, e, f, g)
+    tot = mult_a_lot(tot, a, b, c, d, e, f, g)
+
+t0 = time.time() - t0
+print('%04d: %f' % (rank, t0))
