@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J run-test
-#SBATCH -A mtashear
+#SBATCH -A metashear
 #SBATCH -p bdwall
 #SBATCH -N 1
 #SBATCH -o myjob.oe

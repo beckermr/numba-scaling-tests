@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J run-test
-#SBATCH -A mtashear
+#SBATCH -A metashear
 #SBATCH --partition=knlall
 #SBATCH --constraint knl,quad,cache
 #SBATCH -N 1
