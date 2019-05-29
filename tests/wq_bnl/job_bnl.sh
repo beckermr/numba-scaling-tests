@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo $CONDA_EXE
-conda activate bnl
+source activate bnl
 
 echo `which python`
 
