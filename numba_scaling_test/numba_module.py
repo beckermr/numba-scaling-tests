@@ -38,6 +38,7 @@ def add_a_lot(tot, a, b, c, d, e, f, g):
     return tot
 
 
+@njit
 def mult_a_lot(tot, a, b, c, d, e, f, g):
     """dummy function to compile a bunch of stuff in numba"""
     ny = tot.shape[0]
