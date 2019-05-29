@@ -18,7 +18,7 @@ echo `which python`
 srun -n 1 python -m cProfile -s cumtime ../numba-test-script 1 >& data1_knl.txt
 srun -n 2 python -m cProfile -s cumtime ../numba-test-script 1 >& data2_knl.txt
 
-for nc in `range 1 36`
+for nc in `seq 1 64`
 do
     srun -n ${nc} python -m cProfile -s cumtime ../numba-test-script 1 >& data${nc}_knl.txt
 done
