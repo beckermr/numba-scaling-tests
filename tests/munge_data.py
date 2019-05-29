@@ -24,7 +24,7 @@ def _extract_data(tail):
     for fname, n_ranks in zip(fnames, ranks):
         # munge the run time
         output = subprocess.check_output(
-                'grep -E "\\d{4}:" %s' % fname,
+                'grep -E "[0-9]{4}:" %s' % fname,
                 shell=True).decode('utf-8')
         data = []
         for line in output.split('\n'):
