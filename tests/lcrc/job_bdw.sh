@@ -14,5 +14,7 @@ source activate lcrc
 
 echo `which python`
 
-srun -n 1 python -m cProfile -s cumtime ../numba-test-script 1 >& data1_bdw.txt
-srun -n 2 python -m cProfile -s cumtime ../numba-test-script 1 >& data2_bdw.txt
+for nc in `range 1 36`
+do
+    srun -n ${nc} python -m cProfile -s cumtime ../numba-test-script 1 >& data${nc}_bdw.txt
+done
