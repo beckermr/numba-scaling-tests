@@ -3,7 +3,7 @@
 #SBATCH -A metashear
 #SBATCH -p bdwall
 #SBATCH -N 1
-#SBATCH -o myjob.oe
+#SBATCH -o myjob_bdw.oe
 #SBATCH -t 01:00:00
 
 module load intel-parallel-studio
