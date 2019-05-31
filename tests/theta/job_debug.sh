@@ -14,9 +14,9 @@ unset PYTHONPATH
 source activate theta
 
 aprun -n 1 -N 1 python -m cProfile -s cumtime ../numba-test-script 1 >& data1_knl.txt
-aprun -n 1 -N 2 python -m cProfile -s cumtime ../numba-test-script 1 >& data2_knl.txt
+aprun -n 2 -N 2 python -m cProfile -s cumtime ../numba-test-script 1 >& data2_knl.txt
 
 for nc in 1 2 4 8 16 32 64
 do
-    aprun -n 1 -N ${nc} python -m cProfile -s cumtime ../numba-test-script 1 >& data${nc}_knl.txt
+    aprun -n ${nc} -N ${nc} python -m cProfile -s cumtime ../numba-test-script 1 >& data${nc}_knl.txt
 done
