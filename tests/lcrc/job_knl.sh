@@ -7,7 +7,7 @@
 #SBATCH -o myjob_knl.oe
 #SBATCH -t 02:00:00
 
-module load intel-parallel-studio
+# module load intel-parallel-studio
 export I_MPI_FABRICS=ofi
 
 echo $CONDA_EXE
