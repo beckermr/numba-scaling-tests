@@ -10,8 +10,10 @@
 # module load intel-parallel-studio
 # export I_MPI_FABRICS=ofi
 
+module load mvapich2
+
 echo $CONDA_EXE
-source activate lcrc
+source activate lcrc-mvapich
 
 echo `which python`
 
