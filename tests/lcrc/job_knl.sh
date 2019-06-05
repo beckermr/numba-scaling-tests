@@ -9,7 +9,11 @@
 
 # module load intel-parallel-studio
 # export I_MPI_FABRICS=shm:ofi
-module load python/3.6.5-lvrzbky py-mpi4py/3.0.0-rs44mty py-numpy/1.14.3-rbyynit  py-setuptools/39.2.0-bunlsar
+
+echo $CONDA_EXE
+source activate lcrc
+
+echo `which python`
 
 echo `which python`
 
