@@ -8,6 +8,9 @@ chmod u+x Miniconda3-latest-Linux-x86_64.sh
 
 source activate /scratch/miniconda3/envs/test
 
+echo `which python`
+echo `which pip`
+
 pip install mpi4py --no-deps
 
 pth=`pwd`
