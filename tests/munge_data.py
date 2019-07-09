@@ -3,7 +3,6 @@ import glob
 import sys
 import subprocess
 
-import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -75,11 +74,13 @@ ranks_nn, r_nn, _, c_nn, _ = _extract_data(tail+'_nn')
 
 
 # make a plot
-plt.figure()
-plt.plot(ranks, r, label='run - numba')
-plt.plot(ranks, c, label='compile - numba')
-plt.plot(ranks_nn, r_nn, label='run - no numba')
-plt.legend()
-plt.xlabel('# of ranks')
-plt.ylabel('time [seconds]')
-plt.show()
+if False:
+    import matplotlib.pyplot as plt
+    plt.figure()
+    plt.plot(ranks, r, label='run - numba')
+    plt.plot(ranks, c, label='compile - numba')
+    plt.plot(ranks_nn, r_nn, label='run - no numba')
+    plt.legend()
+    plt.xlabel('# of ranks')
+    plt.ylabel('time [seconds]')
+    plt.show()
