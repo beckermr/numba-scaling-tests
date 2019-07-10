@@ -3,6 +3,7 @@
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod u+x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh -b -p /scratch/miniconda3
+rm -f Miniconda3-latest-Linux-x86_64.sh
 
 /scratch/miniconda3/bin/conda create -n test python=3.6 numba numpy -y
 
