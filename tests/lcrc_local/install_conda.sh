@@ -11,7 +11,7 @@ source activate /scratch/miniconda3/envs/test
 echo `which python`
 echo `which pip`
 
-pip install mpi4py --no-deps
+pip install mpi4py --no-deps --force-reinstall --no-cache-dir
 
 pth=`pwd`
 cd ../..
